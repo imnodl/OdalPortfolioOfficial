@@ -1,0 +1,847 @@
+@import url('https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+
+
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.custom-cursor {
+    cursor: url('assets/cursor1.png'), auto;
+}
+
+
+
+/* Global Styles */
+html, body {
+    
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    opacity: 1;
+    animation: formFadeIn 1.2s  forwards;
+    font-family: 'League Spartan', sans-serif;
+    height: auto;
+         
+}
+
+
+/* Form Fade-in Animation */
+@keyframes formFadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Fade-out effect for the loader and fade-in for the content */
+body.loaded .loader {
+    display: none;
+    
+}
+
+body.loaded .body {
+    display: block;
+    opacity: 1;  /* Show content after loading */
+    transition: opacity 5s ease-in-out;  /* Add a fade-in effect */
+    
+}
+
+/* disable scrolling within loader period */ 
+.no-scroll {
+    overflow: hidden;
+    height: 100vh;
+}
+
+
+
+/* Loader */
+.loader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1a1a1a;
+    background-size: cover; /* Ensure the image covers the entire background */
+    z-index: 9999;
+    
+    
+}
+
+
+
+
+
+.logoload {
+    width: 120px;
+    height: auto;
+    animation: heartbeat 2.2s infinite; /* Apply heartbeat animation */
+}
+
+/* Heartbeat animation */
+@keyframes heartbeat {
+    0% {
+        transform: scale(1); /* Normal size */
+    }
+    30% {
+        transform: scale(1.1); /* Slightly larger */
+    }
+    50% {
+        transform: scale(1); /* Return to normal size */
+    }
+    70% {
+        transform: scale(1.2); /* Slightly larger again */
+    }
+    100% {
+        transform: scale(1); /* Return to normal size */
+    }
+}
+
+
+
+/* Loading bar styles */
+.loading-bar {      /* Loading bar container */
+    width: 10%;
+    height: 4px;
+    background-color: #6b6868;
+    margin-top: 10px;
+    
+}
+
+.progress { /* loading progress perse */
+    width: 0%;
+    height: 100%;
+    background-color: #FFFFF0;
+    animation: loadingProgress 3.5s linear forwards;
+}
+
+@keyframes loadingProgress {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+/* Content that is shown after loading */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Header Section */
+header {
+    
+    color: white;
+    text-align:left;
+    padding: 50px 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #1a1a1a;
+    position:relative;    
+    
+}
+
+#io {
+    animation: heartbeat 2.2s infinite;
+    position: absolute;
+    left: 40px;
+    top: 40px;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 900;
+    background-color: #292727;  /* Dark background to match header */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;  /* Circular shape */
+    color: #fff;  /* Text color */
+    font-size: 20px;  /* Adjust font size as necessary */
+    
+    /* Subtle 3D Shadow Effect to make it appear embedded in the background */
+    box-shadow: 
+        inset 2px 2px 5px rgba(255, 255, 255, 0.3),     /* Inner shadow to simulate embedding */
+        2px 2px 5px rgba(0, 0, 0, 0.4),           /* Soft outer shadow for subtle lift */
+        0px 0px 10px rgba(0, 0, 0, 0.2);          /* Very soft shadow to blend it in */
+    
+    text-shadow: 
+        1px 1px 2px rgba(0, 0, 0, 0.5),           /* Slight dark shadow for text */
+        -1px -1px 2px rgba(255, 255, 255, 0.2);   /* Light text shadow for depth */
+}
+
+#io .io {
+    margin-top: 5px;
+    width: 40px;
+    height: auto;
+}
+
+
+
+
+header .hero-content p { /* NAME */
+    font-size: 30px;
+     color: #FFFFF0;
+     
+}
+
+
+
+/* Container for the content */
+.hero-content {
+    display: flex;
+    justify-content: center; /* Space between the text and logo */
+    align-items: center; /* Aligns items vertically in the center */
+    padding:20px;
+    border-radius: 5px;
+    
+    
+}
+
+
+.logo {
+    width: 35px; /* Adjust size of the logo */
+    height: auto;
+    margin-bottom: 7%;
+    margin-left: 3%;
+        
+}
+
+.cert-button { /* DL BUTTON FOR CERT */
+    width: 35px; /* Adjust size of the logo */
+    height: auto;
+}
+
+/* Text container */
+.text-container {
+    display: inline-block;
+    height: auto; /* Set a fixed height to prevent layout shifting */
+    /* Ensure no content overflows */
+    line-height: 120px; /* Align text vertically */
+}
+
+
+
+.text-container .typewriter {
+   margin-bottom: -50px;
+    display: inline-block;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 1;
+    overflow: hidden; /* Hides the text initially */
+    border-right: 3px solid #33ac43; /* Creates the "cursor" effect */
+    white-space: nowrap; /* Prevents the text from wrapping to the next line */
+    animation: blink 0.5s step-end infinite; /* Cursor blinking */
+}
+
+/* Blinking cursor effect */
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+
+
+
+
+
+
+
+
+header .hero-content h1 { /* front end */
+    font-family: 'League Spartan', sans-serif;
+    font-size: 75px;
+    line-height: 1;
+    color: #FFFFF0;
+    font-weight: 500;
+    display: flex; /* Use flexbox to align content */
+    gap: 40px;
+    
+    
+}
+
+.logo-container { /* LOGO CONTAINER */
+    display: flex; /* Flex container for logos */
+    align-items: center; /* Align logos vertically */
+    gap: 20px; /* Add spacing between logos */
+}
+
+/* Logo adjustments */
+.logo {
+    width: 34px; /* Size of the logos */
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo:hover  {
+    transform: scale(1.3); /* Correct scaling */
+   
+    
+    
+}
+
+h1 .developer{ 
+    font-family: 'League Spartan', sans-serif;
+    font-size: 75px;
+    line-height: 1;
+    color: #FFFFF0;
+    font-weight: 900;
+    
+    letter-spacing: 14px;
+    text-shadow: 20px 60px 12px 5px rgb(0, 0, 0,0.8);
+     /* Animation styling */
+     animation:  colorShift 4s infinite;
+     
+}
+
+
+
+/* Keyframes for subtle color gradient shift */
+@keyframes colorShift {
+    0% {
+        color: #FFFFF0;
+        text-shadow: 20px 15px 12px rgba(0, 0, 0, 1);
+    }
+    
+    30% {
+        color: #FFFFF0;
+        text-shadow: 20px 15px 12px rgba(0, 0, 0, 1);
+    }
+   
+    87% {
+        color: #334e3a;
+        text-shadow: 20px 15px 12px rgba(0, 0, 0, 1);
+    }
+    100% {
+        color: #FFFFF0;
+        text-shadow: 20px 15px 12px rgba(0, 0, 0, 1);
+    }
+}
+
+
+
+
+.cta-button {
+    padding: 10px 20px;
+    background-color: #28a745; /* Button base color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transition for glow */
+    box-shadow: 0 0 10px rgba(40, 167, 69, 0.5); /* Subtle initial glow */
+}
+
+.cta-button:hover {
+    background-color: #6e9c78; /* Slightly darker green on hover */
+    transform: scale(1.1); /* Slight zoom on hover */
+    box-shadow: 0 0 20px rgba(40, 167, 69, 0.8), 0 0 40px rgba(40, 167, 69, 0.6); /* Brighter glow on hover */
+}
+
+
+/* About Section */
+
+.aboutmain {
+    display: flex;
+    align-items: flex-start;
+    justify-content:center;
+    background-image: url('assets/odaldottedbg.jpg');
+    color: #FFFFF0;
+    background-size: cover; /* Ensures the image covers the entire section */
+    background-repeat: no-repeat;
+    background-position: center;
+    gap: 50px;
+    padding: 50px;
+    
+    
+        
+}
+
+
+ .container {
+    transform: translatex(80px);
+    opacity:0;
+    transition: opacity 2s ease, transform 1.5s ease;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.container--visible {
+    transform: translatex(0);
+    opacity:1;
+}
+
+
+
+
+
+#about2, #about1{
+    width: 780px;
+}
+
+
+* h2{
+
+    font-size: 45px;
+}
+
+* h3{
+
+    font-size: 22px;
+}
+
+* p {
+font-size: 20px;
+}
+
+
+
+
+#about2 .logo-container{
+
+    width: auto;
+    
+}
+
+
+
+#letranlogo, #googlelogo {
+    width: 100px; /* Size of the logos */
+    aspect-ratio: 3 / 2;
+    object-fit: contain;
+    height: auto;
+}
+#udemylogo{
+
+    width: 100px; /* Size of the logos */
+    height: auto;
+}
+
+.skillslogo {
+    width: 140px; /* Size of the logos */
+    aspect-ratio: 3 / 2;
+    object-fit: contain;
+    height: auto;
+}
+
+
+
+
+/* Projects Section */
+#projects {
+    padding: 60px 0;
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    width: auto;
+    color:#fffff0 ;
+    height: auto;
+    
+    
+    
+    }
+
+
+
+
+    .project-holder {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap; /* Ensures flexibility for multiple cards */
+        gap:30px;
+        
+    }
+    
+    .project-card {
+        background-color: rgb(255, 255, 255, 0.1); 
+        backdrop-filter: blur(1px);
+        -webkit-backdrop-filter: blur(25px);
+        padding:35px;
+        box-shadow: 20px 15px 12px rgba(0, 0, 0, 0.1);
+        border-radius: 15px;
+        width: 420px;
+        display: flex; /* Enables flexbox for contents */
+        flex-direction: column;
+        position: relative;
+        height: 450px;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        
+                  
+    }
+
+
+
+    #project1 {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        border-radius: 15px;
+        width: 320px;
+        height: auto;
+        transition: width 0.5s ease, height 0.5s ease; /* Add smooth transition */
+    }
+    
+    #project1:hover {
+        width: 360px;
+        height: auto;
+    }
+
+
+
+
+ .projecth3{
+    color: #28a745;
+}
+
+.project-card h3 {
+    margin-bottom: 10px;
+}
+
+.project-card a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.project-card a:hover {
+    text-decoration: underline;
+}
+
+/* Skills Section */
+#skills {
+    background-color: #fffff0;
+    padding: 60px 0;
+    
+    
+}
+
+#skills ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#skills ul li {
+    margin: 70px 38px 110px;
+    font-size: 34px;
+}
+
+/* Contact Section */
+#contact {
+    background-color: #1a1a1a;
+    color: #FFFFF0;
+    padding: 60px 0;
+}
+
+#contact form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 15px;
+}
+
+#contact input, #contact textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#contact button {
+    padding: 10px 20px;
+    background-color: #28a745; /* Button base color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transition for glow */
+    box-shadow: 0 0 10px rgba(40, 167, 69, 0.5); /* Subtle initial glow */
+}
+
+#contact button:hover {
+    background-color: #6e9c78; /* Slightly darker green on hover */
+    transform: scale(1.04); /* Slight zoom on hover */
+    box-shadow: 0 0 20px rgba(40, 167, 69, 0.8), 0 0 40px rgba(40, 167, 69, 0.6); /* Brighter glow on hover */
+}
+
+/* Footer Section */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 650px) {
+
+   
+
+/* Loading bar styles */
+.loading-bar {      /* Loading bar container */
+    width: 25%;
+    height: 4px;
+    background-color: #6b6868;
+    margin-top: 10px;
+    
+}
+
+    .logoload {
+        width: 100px;
+        height: auto;
+        animation: heartbeat 2.2s infinite; /* Apply heartbeat animation */
+    }
+    /* Adjust the size of the .developer span */
+
+    
+    /* Adjust the rest of the header content for better responsiveness */
+    .hero-content {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center the items */
+        padding: 20px;
+        justify-items: center;
+        justify-content: center;
+        gap: 10px;
+        
+        margin-top: -200px;
+    }
+
+ 
+
+
+    .logo-container { /* LOGO CONTAINER */
+        display: flex; /* Flex container for logos */
+        align-items: center; /* Align logos vertically */
+        gap: 15px; /* Add spacing between logos */
+    }
+
+    .logo {
+        width: 17px; /* Size of the logos */
+        margin-bottom: -12px;
+        transition: transform 0.3s ease-in-out;
+}
+
+    .text-container{
+        margin-bottom: 70px;
+        align-items: center;
+
+    }
+    .text-container .typewriter  {
+        font-size: 15px;
+        margin-bottom: -100px;
+        margin-left: 20px;
+    }
+    
+    /* You might also want to adjust the font size of the front-end span */
+    .frontend {
+        font-size: 30px;
+        margin-top: 50px;
+        line-height: 1;
+        gap: 10px;
+        
+    }
+
+     .hero-content h1 { /* front end */
+        margin-left: 20px;
+        gap: 10px;
+        
+    }
+
+    h1 .developer{ 
+        font-family: 'League Spartan', sans-serif;
+        font-size: 30px;
+        line-height: 1;
+        color: #FFFFF0;
+        font-weight: 3200;
+        
+        letter-spacing: 10px;
+        text-shadow: 20px 60px 12px  rgb(0, 0, 0);
+         /* Animation styling */
+         animation:  colorShift 4s infinite;
+         
+    }
+
+
+   
+
+
+    
+    .cta-button {
+        padding: 10px 20px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 10px;
+        margin-top: -70px;
+    }
+
+
+    .aboutmain {
+        display: flex;
+        align-items: center;
+        justify-content:center;
+        background-image: url('assets/odaldottedbg.jpg');
+        color: #FFFFF0;
+        background-size: cover; /* Ensures the image covers the entire section */
+        background-repeat: no-repeat;
+        background-position: center;
+        flex-wrap: wrap;
+        gap:-50px;
+                
+    }
+
+    #about2 .container{
+        width: 100%;
+    }
+
+    #letranlogo, #googlelogo {
+        width: 70px; /* Size of the logos */
+        aspect-ratio: 3 / 2;
+        object-fit: contain;
+        height: auto;
+    }
+    #udemylogo{
+    
+        width: 70px; /* Size of the logos */
+        height: auto;
+    }
+
+   
+
+    .project-holder {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap; /* Ensures flexibility for multiple cards */
+        gap:30px;
+        
+    }
+
+
+
+.project-card {
+        background-color: rgb(255, 255, 255, 0.1); 
+        backdrop-filter: blur(1px);
+        -webkit-backdrop-filter: blur(25px);
+        padding:20px;
+        box-shadow: 20px 15px 12px rgba(0, 0, 0, 0.1);
+        border-radius: 15px;
+        width: 300px;
+        display: flex; /* Enables flexbox for contents */
+        flex-direction: column;
+        position: relative;
+        height: 300px;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        
+                  
+    }
+
+
+
+    #project1 {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        border-radius: 15px;
+        width: 220px;
+        height: auto;
+        transition: width 0.5s ease, height 0.5s ease; /* Add smooth transition */
+    }
+    
+    #project1:hover {
+        width: 250px;
+        height: auto;
+    }
+   
+    * h2{
+
+        font-size: 35px;
+    }
+    
+    * h3{
+    
+        font-size: 17px;
+    }
+    
+    * p {
+    font-size: 14px;
+    }
+    
+   
+  /* Skills Section */
+#skills {
+    background-color: #fffff0;
+    padding: 60px 0;
+    
+    
+}
+
+#skills ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#skills ul li {
+    margin: 70px 25px 80px;
+    font-size: 30px;
+    flex-wrap: wrap;
+    
+    
+}
+.skillslogo {
+    width: 80px; /* Size of the logos */
+    aspect-ratio: 3 / 2;
+    object-fit: contain;
+    height: auto;
+}
+
+
+}
+
+
+
+
